@@ -28,7 +28,7 @@ pipeline {
                 script {
                     // Construcción de la imagen Docker con soporte multi-plataforma y push al registro
                     sh """
-                        docker buildx build --platform linux/amd64,linux/arm64 -t $DOCKER_REGISTRY/$IMAGE_NAME:$DOCKER_TAG .
+                        docker buildx build --platform linux/amd64,linux/arm64 -t $DOCKER_REGISTRY/$IMAGE_NAME:$DOCKER_TAG . --push
                     """
                 }
                 echo 'Imagen construida y subida al registro...'
