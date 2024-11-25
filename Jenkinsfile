@@ -39,7 +39,7 @@ pipeline {
             steps {
                 script {
                     // Inicia sesión en Docker (solo si es necesario empujar la imagen)
-                    withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                    withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials2', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                         sh """
                             docker login -u \$DOCKER_USERNAME -p \$DOCKER_PASSWORD
                         """
